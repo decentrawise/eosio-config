@@ -106,8 +106,20 @@ describe("Test profile contract", function (eoslime) {
         assert.equal(configData[0].uival2, 3, "error updating uint32 config");
     });
 
+    it("update name config", async () => {
+        let tx = await profileContract.configure('master', 'block.one');
+
+        let configData = await profileContract.config.find();
+        assert.equal(configData[0].master, 'block.one', "error updating uint32 config");
+    });
+
     it("try to update unexisting config", async () => {
         let tx = await eoslime.tests.expectAssert(profileContract.configure('unexisting', '0'));
     });
+
+    // it("get the configuration", async () => {
+    //     let configData = await profileContract.config.find();
+    //     console.log(configData);
+    // });
 
 });
