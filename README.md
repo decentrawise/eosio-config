@@ -46,7 +46,7 @@ Then you just need to add the action to configure your contract... Please refer 
   }
 ```
 
-It is advised to also call the recurring action on any other action, perhaps by an inline action, if the desired is to execute **at most** with delay intervals. Without that the standard behaviour is only deliver the delay without any contract iteractions, so the delay is an **at least** interval and might be more extended when contract iteractions occur.
+Throughout the code all configuration is accessible through the `cfg` member variable...
 
 ## File tree
 
